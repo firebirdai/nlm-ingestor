@@ -1,4 +1,4 @@
-@Library('atrix@master') _
+@Library('atrix@ducdt/debug-slack-notification-sending') _
 
 makeBuildPipeline {
   serviceConfigurations = [
@@ -28,7 +28,7 @@ makeBuildPipeline {
   promoteImageEnabled = true
 
   devDeploymentEnabled = { ctx, buildEnv ->
-      buildEnv.getBranchName() == "main" || buildEnv.getBranchName() == "master"
+      buildEnv.getBranchName() == "main" || buildEnv.getBranchName() == "ducdt/debug-slack-notification-sending"
   }
 
   additionalContainerConfig = { ctx, buildEnv ->
